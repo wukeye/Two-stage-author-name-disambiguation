@@ -1,4 +1,4 @@
-'''该模块作用是将拥有相同orcid的作者合并id'''
+''' 该模块作用是将拥有相同orcid的作者合并id '''
 import pandas as pd
 from collections import Counter
 data = pd.read_csv('new_information.csv', encoding='utf-8-sig')
@@ -19,6 +19,7 @@ while i < len(data):
     else:
         data['AuthorId'][i] = dic_orcid[orcid]
         print(data['AuthorName'][i])
+        print(dic_orcid[orcid])
     i = i + 1
 print(len(dic_orcid.keys()))
 print(len(data))
